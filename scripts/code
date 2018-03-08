@@ -1,0 +1,158 @@
+parentElement
+sibling
+
+
+// list-wrapper
+// card-short-id
+var elms = document.querySelectorAll('.is-due-now');
+    for(var k=0; k<elms.length; k++) {
+        i[k]=0;
+    }
+
+for (var i = elms.length - 1; i >= 0; i--) {
+	elm = elms[i];
+	while (elm.parentElement('.list-wrapper')) {
+		elm = elm.parentElement
+		if(elm === null) { break; }
+	}
+	if(elm !== null) {
+		elm.parentElement.style.background = 'red'
+	}
+}
+
+if() {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+// Here You can type your custom JavaScript...
+const checker = function() {
+    var i = []; var bg = [];
+    var elms = document.querySelectorAll('.is-due-now');
+    for(var k=0; k<elms.length; k++) {
+        i[k]=0;
+    }
+    
+    if (elms) {
+        //console.log(document.querySelector('.is-due-now').title);
+        //window.open('http://p.ya.ru');
+        for(var j=0; j<elms.length; j++) {
+            bg[j] = elms[j].style.background;
+            if(i[j] === 0) {elms[j].style.background = 'blue'; i[j]++;}
+            else {elms.style.background = bg; i[j]--;}    
+        }
+    }
+}
+
+function docWr(str) { // добавляет дочерний к боди div
+      var div = document.createElement("div");
+      div.className = "added div";
+      div.innerHTML = str;
+      document.body.appendChild(div);
+     }
+     
+window.setInterval(checker, 3000);
+
+
+var elems = document.body.childNodes;
+elems = Array.prototype.slice.call(elems); // теперь elems - массив
+
+elems.forEach(function(elem) {
+  alert( elem.tagName ); // HEAD, текст, BODY
+});
+
+alert(document.getElementsByTagName('*'));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// не работает ((
+
+
+var elms = document.querySelectorAll('.is-due-past');
+
+function docWr(str) { // добавляет дочерний к боди div
+      var div = document.createElement("div");
+      div.className = "added div";
+      div.innerHTML = str;
+      document.body.appendChild(div);
+     }
+
+const chekk = function() {
+    
+for (var i = elms.length - 1; i >= 0; i--) {
+	elm = elms[i];docWr('      ');
+	while (elm.querySelector('.list-wrapper')) {
+		elm = elm.parentElement; docWr(elm.className);
+		if(elm === null) { break; }
+	}
+docWr('--');
+	if(elm !== null) {
+	    docWr(elm+'-'+elm.style.background);
+		elm.style.background = 'red'
+	}
+}
+}
+
+window.setInterval(chekk, 10000);
+
+
+
+====================================
+// Here You can type your custom JavaScript...
+
+
+var elms = document.querySelectorAll('.is-due-soon');
+
+
+
+const chekk = function() {
+    
+function docWr(str) { // добавляет дочерний к боди div
+      var div = document.createElement("div");
+      div.className = "added div";
+      div.innerHTML = str;
+      document.body.appendChild(div);
+     }
+    
+for (var i = elms.length - 1; i >= 0; i--) {
+	elm = elms[i]; docWr(' ***  ');
+	var k=0;
+	while(k<15) {
+	    if(elm === null) { break; }
+		docWr(elm.className);
+		if(elm.className === 'list js-list-content') {elm.style.background = 'yellow'}
+		if(elm.className === 'js-list list-wrapper') {elm.style.background = 'red'}
+		elm = elm.parentElement; 
+		k++;
+	}
+docWr('--');
+// 	if(elm !== null) {
+// 	    docWr(elm+'-'+elm.style.background);
+// 		elm.style.background = 'red'
+// 	}
+}
+}
+
+window.setInterval(chekk, 5000);
+====================================
